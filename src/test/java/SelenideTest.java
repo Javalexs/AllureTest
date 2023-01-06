@@ -19,7 +19,7 @@ public class SelenideTest {
 
         $(linkText("eroshenkoam/allure-example")).click();
         $("#issues-tab").click();
-        $(withText("С Новым Годом (2022)")).should(Condition.visible);
+        $(withText("РЎ РќРѕРІС‹Рј Р“РѕРґРѕРј (2022)")).should(Condition.visible);
 
     }
 }

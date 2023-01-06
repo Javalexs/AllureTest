@@ -8,28 +8,28 @@ import static org.openqa.selenium.By.linkText;
 
 public class WebSteps {
 
-    @Step("Открываем главную страницу")
+    @Step("РћС‚РєСЂС‹РІР°РµРј РіР»Р°РІРЅСѓСЋ СЃС‚СЂР°РЅРёС†Сѓ")
     public void openGitHub(){
         open("https://github.com/");
     }
 
-    @Step("Ищем репозиторий {repository}")
+    @Step("РС‰РµРј СЂРµРїРѕР·РёС‚РѕСЂРёР№ {repository}")
     public void searchRepo(String repository){
         $(".header-search-input").click();
         $(".header-search-input").setValue(repository).pressEnter();
     }
 
-    @Step("Кликаем по ссылке репозитория {repository}")
+    @Step("РљР»РёРєР°РµРј РїРѕ СЃСЃС‹Р»РєРµ СЂРµРїРѕР·РёС‚РѕСЂРёСЏ {repository}")
     public void clickOnLink(String repository){
         $(linkText(repository)).click();
     }
 
-    @Step("Открываем таб Issues")
+    @Step("РћС‚РєСЂС‹РІР°РµРј С‚Р°Р± Issues")
     public void openIssues(){
         $("#issues-tab").click();
     }
 
-    @Step("Проверяем наличие фразы {ISSUES}")
+    @Step("РџСЂРѕРІРµСЂСЏРµРј РЅР°Р»РёС‡РёРµ С„СЂР°Р·С‹ {ISSUES}")
     public void checkIssuePhrase(String issues){
         $(withText(issues)).should(Condition.visible);
     }

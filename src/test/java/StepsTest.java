@@ -11,29 +11,29 @@ import static org.openqa.selenium.By.linkText;
 
 public class StepsTest {
     private static final String REPOSITORY = "eroshenkoam/allure-example";
-    private static final String ISSUES = "Ñ Íîâûì Ãîäîì (2022)";
+    private static final String ISSUES = "Ð¡ ÐÐ¾Ð²Ñ‹Ð¼ Ð“Ð¾Ð´Ð¾Ð¼ (2022)";
     @Test
     public void testLambdaTest(){
         SelenideLogger.addListener("allure", new AllureSelenide());
 
-        step("Îòêðûâàåì ãëàâíóþ ñòðàíèöó", () -> {
+        step("ÐžÑ‚ÐºÑ€Ñ‹Ð²Ð°ÐµÐ¼ Ð³Ð»Ð°Ð²Ð½ÑƒÑŽ ÑÑ‚Ñ€Ð°Ð½Ð¸Ñ†Ñƒ", () -> {
             open("https://github.com/");
         });
 
-        step("Èùåì ðåïîçèòîðèé " + REPOSITORY, () -> {
+        step("Ð˜Ñ‰ÐµÐ¼ Ñ€ÐµÐ¿Ð¾Ð·Ð¸Ñ‚Ð¾Ñ€Ð¸Ð¹ " + REPOSITORY, () -> {
             $(".header-search-input").click();
             $(".header-search-input").setValue(REPOSITORY).pressEnter();
         });
 
-        step("Êëèêàåì ïî ññûëêå ðåïîçèòîðèÿ " + REPOSITORY, () -> {
+        step("ÐšÐ»Ð¸ÐºÐ°ÐµÐ¼ Ð¿Ð¾ ÑÑÑ‹Ð»ÐºÐµ Ñ€ÐµÐ¿Ð¾Ð·Ð¸Ñ‚Ð¾Ñ€Ð¸Ñ " + REPOSITORY, () -> {
             $(linkText(REPOSITORY)).click();
         });
 
-        step("Îòêðûâàåì òàá Issues", () -> {
+        step("ÐžÑ‚ÐºÑ€Ñ‹Ð²Ð°ÐµÐ¼ Ñ‚Ð°Ð± Issues", () -> {
             $("#issues-tab").click();
         });
 
-        step("Ïðîâåðÿåì íàëè÷èå ôðàçû " + ISSUES, () -> {
+        step("ÐŸÑ€Ð¾Ð²ÐµÑ€ÑÐµÐ¼ Ð½Ð°Ð»Ð¸Ñ‡Ð¸Ðµ Ñ„Ñ€Ð°Ð·Ñ‹ " + ISSUES, () -> {
             $(withText(ISSUES)).should(Condition.visible);
         });
     }
